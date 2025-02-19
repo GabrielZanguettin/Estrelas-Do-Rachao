@@ -8,4 +8,5 @@ O "estrelinha do rachão" seria aquele que mais jogou mal no jogo. O site funcio
   3. Você adiciona a estrela clicando no +, e a estrela aparece em cima do nome do jogador,
   4. Ao coletar 9 estrelas, o jogador ganha uma estrela roxa,
   5. Quem coletar 3 estrelas roxas primeiro é declarado como o pior jogador de todos os tempos.
+
 Infelizmente, eu não consegui achar um SITE que tem suporte para .NET bom e de graça para dar deploy na API do projeto. Por isso, os dados são salvos em local storage.
