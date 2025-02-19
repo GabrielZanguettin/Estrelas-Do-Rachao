@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="EstrelinhasAPI" namespace="EstrelinhasAPI.Entidades">
+	<class name="User" table="user_table">
+		<id name="UserId" column="userid">
+			<generator class="sequence">
+				<param name="sequence">userid_sequence</param>
+			</generator>
+		</id>
+		<property name="Nome" column="nome"/>
+		<property name="Stars" column="stars"/>
+		<property name="PurpleStars" column="purplestars"/>
+	</class>
+</hibernate-mapping>
