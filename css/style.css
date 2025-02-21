@@ -163,7 +163,7 @@ body {
     max-width: 90%;
 }
 
-span {
+.toast {
     background-color: rgb(228, 167, 14);
     color: #FFF;
     font-size: 1.2rem;
@@ -194,6 +194,96 @@ span {
     transform: translateY(0);
 }
 
+#fade, #modal {
+    pointer-events: all;
+    opacity: 1;
+}
+
+#fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+#modal {
+    position: fixed;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #202124;
+    width: 500px;
+    height: 400px;
+    max-width: 90%;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    text-align: center;
+    white-space: normal;
+    transition: 0.5s;
+}
+
+#modal-header {
+    color: #FFF;
+}
+
+#modal-header h2 {
+    margin-top: 50px;
+}
+
+#modal-header .bi-x {
+    color: #FFF;
+}
+
+#modal-header button {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid #FFF;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#modal-header button:hover {
+    background-color: red;
+    border: 1px solid #202124;
+}
+
+
+#winner {
+    color: red;
+    font-size: 3rem; 
+}
+
+#modal-body p {
+    color: #FFF;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#modal.hide,
+#fade.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+@media (max-width: 1418px) {
+    #modal {
+        width: 400px;
+        height: 400px;
+    }
+}
 @media (max-width: 536px) {
     header h2 {
         font-size: 1.8rem;
@@ -204,6 +294,9 @@ span {
     #add-user-container {
         width: 100%;
         padding: 0 2rem;
+    }
+    #modal-header h2 {
+        font-size: 1.3rem;
     }
 }
 
