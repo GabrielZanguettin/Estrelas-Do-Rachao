@@ -4,6 +4,10 @@ const addUserBtn = document.querySelector(".add-user");
 const userInput = document.querySelector("#user-content");
 const usersContainer = document.querySelector("#users-container");
 const messageContainer = document.querySelector("#message-container");
+const closeModalBtn = document.querySelector("#close-modal");
+const modal = document.querySelector("#modal");
+const fade = document.querySelector("#fade");
+const winnerH3 = document.querySelector("#winner");
 
 // Funções 
 
@@ -80,6 +84,7 @@ function addUser() {
 
         messageContainer.innerHTML = ""; 
         const span = document.createElement("span");
+        span.classList.add("toast")
         span.innerText = "Jogador adicionado com sucesso!";
         messageContainer.appendChild(span);
 
@@ -117,16 +122,32 @@ function showUsers() {
     }
 }
 
+function toggleModal() {
+    modal.classList.toggle("hide");
+    fade.classList.toggle("hide");
+}
+
 function addStars(id, starsContainer) {
     try {
         const users = getUsersLocalStorage();
-        const userFiltred = users.filter((user) => user.id === id)[0]
+        const userFiltred = users.filter((user) => user.id === id)[0];
 
-        if (userFiltred.stars === 9) {
-            userFiltred.stars = 0
+        if (userFiltred.purpleStars === 2 && userFiltred.stars === 9) {
+
+            userFiltred.stars = 0;
             userFiltred.purpleStars += 1;
+            winnerH3.innerText = userFiltred.nome + "!";
+            toggleModal();
+
+        } else if (userFiltred.stars === 9) {
+
+            userFiltred.stars = 0;
+            userFiltred.purpleStars += 1;
+
         } else {
-            userFiltred.stars += 1
+
+            userFiltred.stars += 1;
+
         }
 
         updateStarsUI(starsContainer, userFiltred.stars, userFiltred.purpleStars);
@@ -189,6 +210,16 @@ function saveUsersLocalStorage(users) {
 
 addUserBtn.addEventListener("click", () => {
     addUser();
+})
+
+closeModalBtn.addEventListener("click", () => {
+    const users = getUsersLocalStorage();
+    users.forEach((user) => {
+        user.stars = 0;
+        user.purpleStars = 0;
+    });
+    saveUsersLocalStorage(users);
+    toggleModal();
 })
 
 userInput.addEventListener("keydown", (e) => {
