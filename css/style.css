@@ -299,6 +299,12 @@ body {
     #modal-header h2 {
         font-size: 1.3rem;
     }
+    .user {
+        min-height: 220px;
+    }
+    .stars-container {
+        margin-top: 47px;
+    }
 }
 
 @media (min-width: 536.01px) {
