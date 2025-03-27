@@ -2,6 +2,7 @@
 Projeto ESTRELAS DO RACHÃO
 --------------------------
 
+--------------------------
 O "estrelinha do rachão" seria aquele que mais jogou mal no jogo. O site funciona da seguinte forma:
   1. Você adiciona um jogador. Não é possível adicionar um jogador sem inserir o nome,
   2. Após o final dos jogos, é decidido quem foi o pior jogador,
