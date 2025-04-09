@@ -302,7 +302,7 @@ body {
 }
 @media (max-width: 536px) {
     header h2 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
     #users-container {
         grid-template-columns: repeat(auto-fill, 100%);
