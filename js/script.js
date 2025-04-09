@@ -49,14 +49,14 @@ function createUser(id, content, stars, purpleStars) {
     if (purpleStars) {
         for (let i = 0; i < purpleStars; i++) {
             const purpleStarIcon = document.createElement("i");
-            purpleStarIcon.classList.add(...["bi", "bi-star", "purple"]);
+            purpleStarIcon.classList.add(...["bi", "bi-star-fill", "purple"]);
             starsContainer.appendChild(purpleStarIcon);
         }
     }
     if (stars) {
         for (let i = 0; i < stars; i++) {
             const starIcon = document.createElement("i");
-            starIcon.classList.add(...["bi", "bi-star", "gold"]);
+            starIcon.classList.add(...["bi", "bi-star-fill", "gold"]);
             starsContainer.appendChild(starIcon);
         }
     }
@@ -164,13 +164,13 @@ function updateStarsUI(starsContainer, stars, purpleStars) {
 
     for (let i = 0; i < purpleStars; i++) {
         const purpleStarIcon = document.createElement("i");
-        purpleStarIcon.classList.add(...["bi", "bi-star", "purple"]);
+        purpleStarIcon.classList.add(...["bi", "bi-star-fill", "purple"]);
         starsContainer.appendChild(purpleStarIcon);
     }
 
     for (let i = 0; i < stars; i++) {
         const starIcon = document.createElement("i");
-        starIcon.classList.add(...["bi", "bi-star", "gold"]);
+        starIcon.classList.add(...["bi", "bi-star-fill", "gold"]);
         starsContainer.appendChild(starIcon);
     }
 }
@@ -197,6 +197,15 @@ function deleteUser(id, div) {
     }
 }
 
+function resetUsers() {
+    const users = getUsersLocalStorage();
+    users.forEach((user) => {
+        user.stars = 0;
+        user.purpleStars = 0;
+    });
+    saveUsersLocalStorage(users);
+}
+
 function getUsersLocalStorage() {
     const usersLocalStorage = JSON.parse(localStorage.getItem("users") || "[]");
     return usersLocalStorage;
@@ -213,12 +222,7 @@ addUserBtn.addEventListener("click", () => {
 })
 
 closeModalBtn.addEventListener("click", () => {
-    const users = getUsersLocalStorage();
-    users.forEach((user) => {
-        user.stars = 0;
-        user.purpleStars = 0;
-    });
-    saveUsersLocalStorage(users);
+    resetUsers();
     toggleModal();
 })
 
