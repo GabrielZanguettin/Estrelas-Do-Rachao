@@ -2,29 +2,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Helvetica;
+    font-family: Poppins;
 }
 
 header {
     display: flex;
     flex-direction: column;
-    background-color: black;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+    padding: 3rem 2rem;
     text-align: center;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
 }
 
 header h2 {
-    font-size: 2rem;
-    text-align: center;
-    color: #FFF;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #fff;
 }
 
 header p {
-    margin-top: 15px;
-    color: #FFF;
-    text-align: center;
+    margin-top: 10px;
+    color: #ccc;
+    font-size: 1rem;
 }
 
 body {
@@ -39,21 +40,33 @@ body {
     gap: 1rem;
 }
 
-#add-user-container input,
-#add-user-container button {
-    padding: 10px;
-    border-radius: 4px;
-}
-
 #add-user-container input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.9rem;
     flex: 1;
-    background-color: transparent;
+    background-color: #2A2A2A;
     border: 1px solid #525356;
     color: white;
 }
 
 #add-user-container button {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+}
+
+#add-user-container button {
     cursor: pointer;
+    background-color: #ffc107;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+#add-user-container button:hover {
+    background-color: #e0a800;
 }
 
 #users-container {
@@ -69,10 +82,12 @@ body {
     justify-content: flex-start;
     align-items: center;
     min-height: 200px;
-    padding: 1rem;
-    border: 1px solid #FFF;
+    padding: 1.5rem;
     position: relative;
     gap: 10px;
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .user h3 {
@@ -86,6 +101,7 @@ body {
     overflow: hidden;
     color: #FFF;
     user-select: none;
+    text-transform: uppercase;
 }
 .add-star {
     padding: 10px;
@@ -103,6 +119,7 @@ body {
     background-color: gold;
     border: 1px solid #202124;
 }
+
 .user .bi-plus-lg {
     z-index: 10;
     color: #FFF;
@@ -136,18 +153,15 @@ body {
     max-width: 90%; 
     margin-top: 35px;
 }
-.user .bi-star.gold {
+
+.user .bi-star-fill.gold {
+    font-size: 18px;
     color: gold;
-    display: flex;
-    top: 10px;
-    left: 15px;
 }
 
-.user .bi-star.purple {
+.user .bi-star-fill.purple {
+    font-size: 18px;
     color: purple;
-    display: flex;
-    top: 10px;
-    left: 15px;
 }
 
 #message-container {
@@ -241,13 +255,14 @@ body {
 
 #modal-header .bi-x {
     color: #FFF;
+    font-size: 20px;
 }
 
 #modal-header button {
     position: absolute;
     top: 25px;
     right: 25px;
-    padding: 10px;
+    padding: 8px 10px;
     border-radius: 4px;
     background-color: transparent;
     border: 1px solid #FFF;
@@ -300,10 +315,13 @@ body {
         font-size: 1.3rem;
     }
     .user {
-        min-height: 220px;
+        min-height: 240px;
     }
     .stars-container {
         margin-top: 47px;
+    }
+    #message-container {
+        width: 80%;
     }
 }
 
