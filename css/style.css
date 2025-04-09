@@ -35,7 +35,7 @@ body {
 #add-user-container {
     display: flex;
     width: 400px;
-    margin: 1rem auto 0;
+    margin: 2rem auto 0;
     justify-content: center;
     gap: 1rem;
 }
@@ -155,7 +155,7 @@ body {
 }
 
 .user .bi-star-fill.gold {
-    font-size: 18px;
+    font-size: 17px;
     color: gold;
 }
 
